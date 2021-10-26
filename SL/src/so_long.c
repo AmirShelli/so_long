@@ -4,10 +4,15 @@ int main(int argc, char *argv[])
 {
 	(void) argc;
 	(void) argv;
-	int u;
-	void *test = mlx_init();
-	void *win = mlx_new_window(test, 1000, 1000, "nu!");
-	void *img = mlx_xpm_file_to_image(test, "7e1a45837e29c04a0434148050fbc56a.xpm", &u, &u);
-	mlx_put_image_to_window(test, win, img, 0, 0);
-	mlx_loop(test);
+
+	void *mlx = mlx_init();
+
+	//opening a window
+	// void *mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
+	// (void) mlx_win;
+	// mlx_loop(mlx); //why do we open mlx if the pointer to the window is in mlx_win?
+
+	//init an image
+	img.img = mlx_new_image(mlx, 1920, 1080);
+	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 }
