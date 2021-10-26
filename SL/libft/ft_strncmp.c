@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bharghaz <bharghaz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/19 22:29:19 by bharghaz          #+#    #+#             */
+/*   Updated: 2021/10/19 22:29:19 by bharghaz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_strncmp(const char *s_st, const char *s_nd, unsigned int n)
+{
+	unsigned int	i;
+	unsigned char	*aux_st;
+	unsigned char	*aux_nd;
+
+	i = 0;
+	aux_st = (unsigned char *)s_st;
+	aux_nd = (unsigned char *)s_nd;
+	if (!n)
+		return (0);
+	while (aux_st[i] == aux_nd[i] && aux_st[i] && aux_nd[i] && --n)
+		i++;
+	return (aux_st[i] - aux_nd[i]);
+}
