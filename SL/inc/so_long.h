@@ -1,5 +1,7 @@
 #include "mlx.h"
+#include <stdio.h>
 
+//image test
 typedef struct	s_data {
 	void	*img;
 	char	*addr;
@@ -7,3 +9,9 @@ typedef struct	s_data {
 	int		line_length;
 	int		endian;
 }				t_data;
+
+//hook test
+typedef struct	s_vars {
+	void	*mlx;
+	void	*win;
+}				t_vars;
