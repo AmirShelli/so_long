@@ -1,21 +1,27 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
-#include "mlx.h"
+#include "../minilibx/mlx.h"
 #include <stdio.h>
 
-//image test
-typedef struct	s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}				t_data;
+# define ESC 53
+# define W 13
+# define A 0
+# define S 1
+# define D 2
 
-//hook test
-typedef struct	s_vars {
-	void	*mlx;
-	void	*win;
-}				t_vars;
+typedef struct s_coord
+{
+	char			letter;
+	int				x;
+	int				y;
+}				t_coord;
+
+typedef struct s_map
+{
+	void	*window;
+	t_coord	*head;
+	int		width;
+	int		height;
+}				t_map;
 
 #endif
