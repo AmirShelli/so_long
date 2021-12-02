@@ -21,7 +21,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
+void	ft_free_table(char **table);
+void	ft_table_linecount(char **table);
 int		ft_isnbr(char *str);
 int		ft_isint(char *str);
 t_list	*ft_lstnew(void *content);

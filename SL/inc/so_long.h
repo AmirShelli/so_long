@@ -3,25 +3,97 @@
 #include "../minilibx/mlx.h"
 #include <stdio.h>
 
-# define ESC 53
-# define W 13
-# define A 0
-# define S 1
-# define D 2
+# define IMG_SIZE 64
 
-typedef struct s_coord
+typedef enum e_tiletype
 {
-	char			letter;
+	EMPTY = '0',
+	WALL = '1',
+	COLLECTABLE = 'C',
+	PLAYER = 'P',
+	EXIT = 'E',
+	ENEMY = 'M'
+}	t_tiletype;
+
+typedef struct s_coordinates
+{
 	int				x;
 	int				y;
 }				t_coord;
 
-typedef struct s_map
+/* Struct for each tile */
+typedef struct s_tile
 {
-	void	*window;
-	t_coord	*head;
-	int		width;
-	int		height;
-}				t_map;
+	t_tiletype		type;
+	t_tiletype		og_type;
+	t_coord			coordinates;
+	struct s_tile	*up;
+	struct s_tile	*down;
+	struct s_tile	*left;
+	struct s_tile	*right;
+}	t_tile;
+
+/* Info about the player */
+typedef struct s_player
+{
+	t_tile	*tile;
+	void	*current_img;
+	int		framecount;
+	int		idle_frames;
+	void	*idle_img_0;
+	void	*idle_img_1;
+}	t_player;
+
+/* All valid input keys */
+enum e_keycode
+{
+	KEY_UP = 13,
+	KEY_DOWN = 1,
+	KEY_LEFT = 0,
+	KEY_RIGHT = 2,
+	RESET = 15,
+	ESC = 53
+};
+
+/* All info for the game run */
+typedef struct s_game
+{
+	void			*mlx;
+	void			*window;
+	t_coord			wndw_size;
+	t_tile			**tilemap;
+	t_player		player;
+	int				og_collects;
+	int				collects;
+	int				moves;
+	// t_enemy			*enemy_list;
+	// t_enemy_img		enemy_imgs;
+	t_coord			img_size;
+	t_wall_img		wall_imgs;
+	t_collect_img	collects_imgs;
+	void			*door_open_img;
+	void			*door_close_img;
+}	t_game;
+
+typedef struct s_wall_img
+{
+	void	*block;
+	void	*up_left;
+	void	*up;
+	void	*up_right;
+	void	*right;
+	void	*down_right;
+	void	*down;
+	void	*down_left;
+	void	*left;
+}	t_wall_img;
+
+typedef struct s_coll_img
+{
+	void	*current_img;
+	int		anim_frames;
+	void	*img_0;
+	void	*img_1;
+}	t_collect_img;
 
 #endif
