@@ -13,6 +13,6 @@ int main(int argc, char *argv[])
 		mlx_loop(game.mlx);
 		return (0);
 	}
-	// int	error("no valid map, no game.");
+	error("no valid map, no game.");
 	return (1);
 }

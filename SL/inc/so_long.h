@@ -15,6 +15,17 @@ typedef enum e_tiletype
 	ENEMY = 'M'
 }	t_tiletype;
 
+/* All valid input keys */
+enum e_keycode
+{
+	KEY_UP = 13,
+	KEY_DOWN = 1,
+	KEY_LEFT = 0,
+	KEY_RIGHT = 2,
+	RESET = 15,
+	ESC = 53
+};
+
 typedef struct s_coordinates
 {
 	int				x;
@@ -44,37 +55,6 @@ typedef struct s_player
 	void	*idle_img_1;
 }	t_player;
 
-/* All valid input keys */
-enum e_keycode
-{
-	KEY_UP = 13,
-	KEY_DOWN = 1,
-	KEY_LEFT = 0,
-	KEY_RIGHT = 2,
-	RESET = 15,
-	ESC = 53
-};
-
-/* All info for the game run */
-typedef struct s_game
-{
-	void			*mlx;
-	void			*window;
-	t_coord			wndw_size;
-	t_tile			**tilemap;
-	t_player		player;
-	int				og_collects;
-	int				collects;
-	int				moves;
-	// t_enemy			*enemy_list;
-	// t_enemy_img		enemy_imgs;
-	t_coord			img_size;
-	t_wall_img		wall_imgs;
-	t_collect_img	collects_imgs;
-	void			*door_open_img;
-	void			*door_close_img;
-}	t_game;
-
 typedef struct s_wall_img
 {
 	void	*block;
@@ -95,5 +75,25 @@ typedef struct s_coll_img
 	void	*img_0;
 	void	*img_1;
 }	t_collect_img;
+
+/* All info for the game run */
+typedef struct s_game
+{
+	void			*mlx;
+	void			*window;
+	t_coord			wndw_size;
+	t_tile			**tilemap;
+	t_player		player;
+	int				og_collects;
+	int				collects;
+	int				moves;
+	// t_enemy			*enemy_list;
+	// t_enemy_img		enemy_imgs;
+	t_coord			img_size;
+	t_wall_img		wall_imgs;
+	t_collect_img	collects_imgs;
+	void			*door_open_img;
+	void			*door_close_img;
+}	t_game;
 
 #endif
