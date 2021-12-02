@@ -20,7 +20,7 @@ libft:
 	@$(MAKE) all -sC ./libft
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit $(LINK_LIBFT) -o $(NAME)
+	$(CC) $(OBJS) -lmlx -framework OpenGL -framework AppKit $(LINK_LIBFT) -o $(NAME)
 
 bonus: $(BONUS_OBJS)
 	@$(CC) $(INCLUDES) $(BONUS_OBJS) $(LINK_LIBFT) -o $(BONUS)

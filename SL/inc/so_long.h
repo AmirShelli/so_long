@@ -1,6 +1,7 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 #include "../minilibx/mlx.h"
+#include "../libft/libft.h"
 #include <stdio.h>
 
 # define IMG_SIZE 64
@@ -96,4 +97,13 @@ typedef struct s_game
 	void			*door_close_img;
 }	t_game;
 
+int	start(t_game *game, char **argv);
+char	**read_map(char *file);
+t_tile	**generate_tilemap(char **map, t_game *game);
+void	open_images(t_game *game);
+
+
+int		error(char *message);
+void	*null_error(char *message);
+void	print_warning(char *message);
 #endif

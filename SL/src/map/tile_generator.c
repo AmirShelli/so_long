@@ -1,4 +1,4 @@
-# include "../so_long.h"
+#include "../inc/so_long.h"
 
 char	**read_map(char *file);
 int		valid_map(char **map);
@@ -37,16 +37,14 @@ t_tiletype	define_tiletype(char definer)
 		return (EXIT);
 	if (definer == 'H' || definer == 'V')
 		return (ENEMY);
-	else if (definer == 'F')
-		return (FOLLOWER);
 	return (EMPTY);
 }
 
 void	setup_tile(t_tile **tilemap, int y, int x)
 {
 	tilemap[y][x].og_type = tilemap[y][x].type; // why do we need the original type for??
-	tilemap[y][x].position.x = x * IMG_SIZE;
-	tilemap[y][x].position.y = y * IMG_SIZE;
+	tilemap[y][x].coordinates.x = x * IMG_SIZE;
+	tilemap[y][x].coordinates.y = y * IMG_SIZE;
 	if (y != 0)
 		tilemap[y][x].up = &tilemap[y - 1][x];
 	if (tilemap[y + 1] != NULL)
@@ -58,6 +56,8 @@ void	setup_tile(t_tile **tilemap, int y, int x)
 
 void	set_gamevars(t_tile *tile, t_game *game, char c)
 {
+	(void) c;
+	
 	if (tile->type == PLAYER)
 		game->player.tile = tile;
 	else if (tile->type == COLLECTABLE)

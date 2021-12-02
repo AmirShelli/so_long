@@ -1,7 +1,7 @@
-#include "map.h"
+#include "../inc/so_long.h"
 #include <fcntl.h>
 #include <unistd.h>
-#include "../gnl/get_next_line.h"
+#include "../../libft/get_next_line.h"
 
 /* Return how many '\n' are in <file> */
 static int	linecount(char *file)
@@ -12,6 +12,7 @@ static int	linecount(char *file)
 	char	c;	
 
 	fd = open(file, O_RDONLY);
+	linecount = 0;
 	if (!fd)
 		return (-1);
 	while ((readcount = read(fd, &c, 1)))
