@@ -7,6 +7,9 @@ static void	draw_image(t_tile tile, t_game game, t_coord pos)
 {
 	if (tile.type == WALL)
 		draw_wall(tile, game, pos);
+	if (tile.type == EMPTY)
+		mlx_put_image_to_window(game.mlx, game.window,
+				game.wall_imgs.empty, pos.x, pos.y);
 	else if (tile.type == EXIT)
 	{
 		if (game.collects != 0)
@@ -54,7 +57,7 @@ void	render(t_game game)
 	int		x;
 	int		y;
 
-	// mlx_clear_window(game.mlx, game.window);
+	mlx_clear_window(game.mlx, game.window);
 	y = 0;
 	while (game.tilemap[y] != NULL)
 	{
@@ -64,11 +67,7 @@ void	render(t_game game)
 			tile = game.tilemap[y][x];
 			draw_image(tile, game, tile.coordinates);
 			x++;
-			printf("{ %c } ", game.tilemap[y][x].type);
-			fflush(stdout);
 		}
-		printf("--- ?\n");
-			fflush(stdout);
 		y++;
 	}
 	draw_text(game);

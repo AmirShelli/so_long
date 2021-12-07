@@ -44,7 +44,7 @@ int	draw_sides(t_tile tile, t_game game, t_coord  pos)
 
 /* Draws the corresponding sprite for the wall at <pos> */
 void	draw_wall(t_tile tile, t_game game, t_coord pos)
-{
+{	
 	if (draw_corner(tile, game, pos))
 		return ;
 	else if (draw_sides(tile, game, pos))

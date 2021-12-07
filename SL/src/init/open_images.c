@@ -3,68 +3,74 @@
 void	open_wallup_imgs(t_game *game)
 {
 	game->wall_imgs.up_left = mlx_xpm_file_to_image(game->mlx,
-			"sprites/wall_ul.xpm",
+			"assets/map/wall_up_left.xpm",
 			&game->img_size.x, &game->img_size.y);
 	game->wall_imgs.up = mlx_xpm_file_to_image(game->mlx,
-			"sprites/wall_u.xpm",
+			"assets/map/wall_up.xpm",
 			&game->img_size.x, &game->img_size.y);
 	game->wall_imgs.up_right = mlx_xpm_file_to_image(game->mlx,
-			"sprites/wall_ur.xpm",
+			"assets/map/wall_up_right.xpm",
 			&game->img_size.x, &game->img_size.y);
 	game->wall_imgs.right = mlx_xpm_file_to_image(game->mlx,
-			"sprites/wall_r.xpm",
+			"assets/map/wall_right.xpm",
 			&game->img_size.x, &game->img_size.y);
 }
 
 void	open_walldown_imgs(t_game *game)
 {
 	game->wall_imgs.down_right = mlx_xpm_file_to_image(game->mlx,
-			"sprites/wall_dr.xpm",
+			"assets/map/wall_down_right.xpm",
 			&game->img_size.x, &game->img_size.y);
 	game->wall_imgs.down = mlx_xpm_file_to_image(game->mlx,
-			"sprites/wall_d.xpm",
+			"assets/map/wall_down.xpm",
 			&game->img_size.x, &game->img_size.y);
 	game->wall_imgs.down_left = mlx_xpm_file_to_image(game->mlx,
-			"sprites/wall_dl.xpm",
+			"assets/map/wall_down_left.xpm",
 			&game->img_size.x, &game->img_size.y);
 	game->wall_imgs.left = mlx_xpm_file_to_image(game->mlx,
-			"sprites/wall_l.xpm",
+			"assets/map/wall_left.xpm",
 			&game->img_size.x, &game->img_size.y);
 }
 
 static void	open_player_imgs(t_game *game)
 {
 	game->player.idle_img_0 = mlx_xpm_file_to_image(game->mlx,
-			"sprites/player_01.xpm", &game->img_size.x, &game->img_size.y);
+			"assets/player/p_img_0.xpm", &game->img_size.x, &game->img_size.y);
 	game->player.idle_img_1 = mlx_xpm_file_to_image(game->mlx,
-			"sprites/player_02.xpm", &game->img_size.x, &game->img_size.y);
+			"assets/player/p_img_1.xpm", &game->img_size.x, &game->img_size.y);
+	game->player.idle_img_2 = mlx_xpm_file_to_image(game->mlx,
+			"assets/player/p_img_2.xpm", &game->img_size.x, &game->img_size.y);
+	game->player.current_img = game->player.idle_img_0;
 }
 
 static void	open_collect_imgs(t_game *game)
 {
 	game->collects_imgs.img_0 = mlx_xpm_file_to_image(game->mlx,
-			"sprites/plant_03.xpm",
+			"assets/items/c_img_0.xpm",
 			&game->img_size.x, &game->img_size.y);
 	game->collects_imgs.img_1 = mlx_xpm_file_to_image(game->mlx,
-			"sprites/plant_04.xpm",
+			"assets/items/c_img_1.xpm",
 			&game->img_size.x, &game->img_size.y);
 	game->collects_imgs.current_img = game->collects_imgs.img_0;
 }
 
 static void	open_door_imgs(t_game *game)
 {
-	game->door_open_img = mlx_xpm_file_to_image(game->mlx,
-			"sprites/door_01.xpm",
-			&game->img_size.x, &game->img_size.y);
 	game->door_close_img = mlx_xpm_file_to_image(game->mlx,
-			"sprites/door_02.xpm",
+			"assets/items/c_img_0.xpm",
+			&game->img_size.x, &game->img_size.y);
+	game->door_open_img = mlx_xpm_file_to_image(game->mlx,
+			"assets/items/c_img_1.xpm",
 			&game->img_size.x, &game->img_size.y);
 }
 
 void	open_block_imgs(t_game *game)
 {
 	game->wall_imgs.block = mlx_xpm_file_to_image(game->mlx,
-			"sprites/wall_02.xpm",
+			"assets/items/b_img_0.xpm",
+			&game->img_size.x, &game->img_size.y);
+	game->wall_imgs.empty = mlx_xpm_file_to_image(game->mlx,
+			"assets/map/wall.xpm",
 			&game->img_size.x, &game->img_size.y);
 	// game->wall_imgs.block_2 = mlx_xpm_file_to_image(game->mlx,
 	// 		"sprites/wall_02.xpm",
@@ -98,5 +104,6 @@ void	open_images(t_game *game)
 	open_walldown_imgs (game);
 	open_player_imgs(game);
 	open_collect_imgs(game);
+	open_block_imgs(game);
 	open_door_imgs(game);
 }

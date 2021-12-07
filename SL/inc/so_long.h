@@ -4,7 +4,7 @@
 #include "../libft/libft.h"
 #include <stdio.h>
 
-# define IMG_SIZE 64
+# define IMG_SIZE 32
 
 typedef enum e_tiletype
 {
@@ -54,6 +54,7 @@ typedef struct s_player
 	int		idle_frames;
 	void	*idle_img_0;
 	void	*idle_img_1;
+	void	*idle_img_2;
 }	t_player;
 
 typedef struct s_wall_img
@@ -67,6 +68,7 @@ typedef struct s_wall_img
 	void	*down;
 	void	*down_left;
 	void	*left;
+	void	*empty;
 }	t_wall_img;
 
 typedef struct s_coll_img
