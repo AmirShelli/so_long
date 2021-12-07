@@ -34,9 +34,8 @@ void	game_init(t_game *game)
 static void	anim_setup(t_game *game) //what's this for? frames?
 {
 	game->player.idle_frames = 17;
-	game->collects_imgs.anim_frames = 25;
-	// game->enemy_imgs.basic_anim = 16;
-	// game->enemy_imgs.follow_anim = 6;
+	game->block_imgs.block_anim = 9;
+	// game->enemy_imgs.enemy_anim = 16;
 }
 
 int	start(t_game *game, char **argv)

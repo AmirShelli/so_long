@@ -24,7 +24,6 @@ t_tile	**alloc_tilemap(char **map)
 	return (tilemap);
 }
 
-// what? why?
 t_tiletype	define_tiletype(char definer)
 {
 	if (definer == '1')
@@ -35,8 +34,10 @@ t_tiletype	define_tiletype(char definer)
 		return (PLAYER);
 	if (definer == 'E')
 		return (EXIT);
-	if (definer == 'H' || definer == 'V')
+	if (definer == 'M')
 		return (ENEMY);
+	if (definer == 'N')
+		return (EMPTIED);
 	return (EMPTY);
 }
 

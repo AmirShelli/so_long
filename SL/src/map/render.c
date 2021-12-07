@@ -7,9 +7,12 @@ static void	draw_image(t_tile tile, t_game game, t_coord pos)
 {
 	if (tile.type == WALL)
 		draw_wall(tile, game, pos);
-	if (tile.type == EMPTY)
+	else if (tile.type == EMPTY)
 		mlx_put_image_to_window(game.mlx, game.window,
 				game.wall_imgs.empty, pos.x, pos.y);
+	else if	(tile.type == EMPTIED)
+		mlx_put_image_to_window(game.mlx, game.window,
+			game.collects_imgs.img_1, pos.x, pos.y);
 	else if (tile.type == EXIT)
 	{
 		if (game.collects != 0)
@@ -21,7 +24,7 @@ static void	draw_image(t_tile tile, t_game game, t_coord pos)
 	}
 	else if (tile.type == COLLECTABLE)
 		mlx_put_image_to_window(game.mlx, game.window,
-			game.collects_imgs.current_img, pos.x, pos.y);
+			game.collects_imgs.img_0, pos.x, pos.y);
 	else if (tile.type == PLAYER) 
 		mlx_put_image_to_window(game.mlx, game.window,
 			game.player.current_img, pos.x, pos.y);
@@ -63,7 +66,7 @@ void	render(t_game game)
 	{
 		x = 0;
 		while (game.tilemap[y][x].type != 0)
-		{	
+		{
 			tile = game.tilemap[y][x];
 			draw_image(tile, game, tile.coordinates);
 			x++;

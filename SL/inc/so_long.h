@@ -9,6 +9,7 @@
 typedef enum e_tiletype
 {
 	EMPTY = '0',
+	EMPTIED = 'N',
 	WALL = '1',
 	COLLECTABLE = 'C',
 	PLAYER = 'P',
@@ -59,7 +60,6 @@ typedef struct s_player
 
 typedef struct s_wall_img
 {
-	void	*block;
 	void	*up_left;
 	void	*up;
 	void	*up_right;
@@ -71,10 +71,18 @@ typedef struct s_wall_img
 	void	*empty;
 }	t_wall_img;
 
+typedef struct s_block_img
+{
+	void	*img_0;
+	void	*img_1;
+	void	*img_2;
+	void	*current_img;
+	int 	framecount;
+	int		block_anim;
+}	t_block_img;
+
 typedef struct s_coll_img
 {
-	void	*current_img;
-	int		anim_frames;
 	void	*img_0;
 	void	*img_1;
 }	t_collect_img;
@@ -90,13 +98,14 @@ typedef struct s_game
 	int				og_collects;
 	int				collects;
 	int				moves;
-	// t_enemy			*enemy_list;
-	// t_enemy_img		enemy_imgs;
 	t_coord			img_size;
 	t_wall_img		wall_imgs;
 	t_collect_img	collects_imgs;
+	t_block_img		block_imgs;
 	void			*door_open_img;
 	void			*door_close_img;
+	// t_enemy			*enemy_list;
+	// t_enemy_img		enemy_imgs;
 }	t_game;
 
 int	start(t_game *game, char **argv);
