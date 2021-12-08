@@ -79,12 +79,6 @@ void	open_block_imgs(t_game *game)
 	game->wall_imgs.empty = mlx_xpm_file_to_image(game->mlx,
 			"assets/map/wall.xpm",
 			&game->img_size.x, &game->img_size.y);
-	// game->wall_imgs.block_2 = mlx_xpm_file_to_image(game->mlx,
-	// 		"sprites/wall_02.xpm",
-	// 		&game->img_size.x, &game->img_size.y);
-	// game->wall_imgs.block_3 = mlx_xpm_file_to_image(game->mlx,
-	// 		"sprites/wall_02.xpm",
-	// 		&game->img_size.x, &game->img_size.y);
 }
 
 // static void	open_enemy_imgs(t_game *game)

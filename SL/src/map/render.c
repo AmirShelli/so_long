@@ -33,8 +33,6 @@ static void	draw_image(t_tile tile, t_game game, t_coord pos)
 	// 		game.enemy_imgs.basic_current, pos.x, pos.y);
 }
 
-/* Writes the number of moves on the window,
-changing its color if the game is completed  */
 static void	draw_text(t_game game)
 {
 	char	*str;
@@ -45,11 +43,11 @@ static void	draw_text(t_game game)
 			game.wndw_size.x - IMG_SIZE / 2.3,
 			IMG_SIZE - IMG_SIZE / 1.5,
 			-1, str);
-	else
-		mlx_string_put(game.mlx, game.window,
-			game.wndw_size.x - IMG_SIZE / 2.3,
-			IMG_SIZE - IMG_SIZE / 1.5,
-			15921152, str);
+	// else
+	// 	mlx_string_put(game.mlx, game.window,
+	// 		game.wndw_size.x - IMG_SIZE / 2.3,
+	// 		IMG_SIZE - IMG_SIZE / 1.5,
+	// 		15921152, str);
 	free(str);
 }
 

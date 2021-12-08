@@ -113,8 +113,9 @@ char	**read_map(char *file);
 t_tile	**generate_tilemap(char **map, t_game *game);
 void	open_images(t_game *game);
 
-
-int	update(t_game *game);
+int		end_program(t_game *game);
+int		input(int key, t_game *game);
+int		update(t_game *game);
 void	render(t_game game);
 int		error(char *message);
 void	*null_error(char *message);

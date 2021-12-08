@@ -19,7 +19,7 @@ int	ft_table_linecount(char **table)
 void	ft_free_table(char **table)
 {
 	int	i;
-
+	
 	i = 0;
 	while (table[i])
 	{
