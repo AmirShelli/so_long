@@ -2,7 +2,6 @@
 
 void	draw_wall(t_tile tile, t_game game, t_coord pos);
 
-/* Draws the corresponding image of the tile type */
 static void	draw_image(t_tile tile, t_game game, t_coord pos)
 {
 	if (tile.type == WALL)
@@ -12,25 +11,25 @@ static void	draw_image(t_tile tile, t_game game, t_coord pos)
 				game.wall_imgs.empty, pos.x, pos.y);
 	else if	(tile.type == EMPTIED)
 		mlx_put_image_to_window(game.mlx, game.window,
-			game.collects_imgs.img_1, pos.x, pos.y);
+			game.items_imgs.collects_img[1], pos.x, pos.y);
 	else if (tile.type == EXIT)
 	{
 		if (game.collects != 0)
 			mlx_put_image_to_window(game.mlx, game.window,
-				game.door_open_img, pos.x, pos.y);
+				game.items_imgs.door_img[0], pos.x, pos.y);
 		if (game.collects == 0)
 			mlx_put_image_to_window(game.mlx, game.window,
-				game.door_close_img, pos.x, pos.y);
+				game.items_imgs.door_img[1], pos.x, pos.y);
 	}
 	else if (tile.type == COLLECTABLE)
 		mlx_put_image_to_window(game.mlx, game.window,
-			game.collects_imgs.img_0, pos.x, pos.y);
+			game.items_imgs.collects_img[0], pos.x, pos.y);
 	else if (tile.type == PLAYER) 
 		mlx_put_image_to_window(game.mlx, game.window,
 			game.player.current_img, pos.x, pos.y);
-	// else if (tile.type == ENEMY)
-	// 	mlx_put_image_to_window(game.mlx, game.window,
-	// 		game.enemy_imgs.basic_current, pos.x, pos.y);
+	else if (tile.type == ENEMY) 
+		mlx_put_image_to_window(game.mlx, game.window,
+			game.enemy.current_img, pos.x, pos.y);
 }
 
 static void	draw_text(t_game game)
@@ -43,15 +42,9 @@ static void	draw_text(t_game game)
 			game.wndw_size.x - IMG_SIZE / 2.3,
 			IMG_SIZE - IMG_SIZE / 1.5,
 			-1, str);
-	// else
-	// 	mlx_string_put(game.mlx, game.window,
-	// 		game.wndw_size.x - IMG_SIZE / 2.3,
-	// 		IMG_SIZE - IMG_SIZE / 1.5,
-	// 		15921152, str);
 	free(str);
 }
 
-/* Puts the tile map on the window */
 void	render(t_game game)
 {
 	t_tile	tile;

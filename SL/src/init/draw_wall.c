@@ -42,7 +42,6 @@ int	draw_sides(t_tile tile, t_game game, t_coord  pos)
 	return (1);
 }
 
-/* Draws the corresponding sprite for the wall at <pos> */
 void	draw_wall(t_tile tile, t_game game, t_coord pos)
 {	
 	if (draw_corner(tile, game, pos))
@@ -50,5 +49,5 @@ void	draw_wall(t_tile tile, t_game game, t_coord pos)
 	else if (draw_sides(tile, game, pos))
 		return ;
 	mlx_put_image_to_window(game.mlx, game.window,
-		game.block_imgs.current_img, pos.x, pos.y);
+		game.items_imgs.current_img, pos.x, pos.y);
 }

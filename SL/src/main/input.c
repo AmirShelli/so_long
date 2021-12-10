@@ -1,4 +1,5 @@
 #include "../../inc/so_long.h"
+#include <stdio.h>
 
 void	move_to_empty(t_game *game, t_tile *tile);
 void	move_to_exit(t_game *game);
@@ -18,7 +19,7 @@ int	move_to(t_game *game, t_tile *tile)
 		move_to_exit(game);
 	else if (tile->type == ENEMY)
 	{
-		// move_to_enemy(game, tile);
+		move_to_enemy(game, tile);
 		return (0);
 	}
 	else
@@ -29,7 +30,7 @@ int	move_to(t_game *game, t_tile *tile)
 int	input(int key, t_game *game)
 {
 	int	moved;
-
+	
 	if (key == ESC)
 		end_program(game);
 	if (game->player.tile == NULL)

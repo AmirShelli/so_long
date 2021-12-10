@@ -13,7 +13,7 @@ t_tile	**map_init(char **argv, t_game *game)
 	// 	ft_free_table(map);
 	// 	return (NULL);
 	// }
-	tilemap = generate_tilemap(map, game); puts("ewwo");
+	tilemap = generate_tilemap(map, game); puts("free_table not working\n");
 	ft_free_table(map);
 	return (tilemap);
 }
@@ -31,8 +31,9 @@ void	game_init(t_game *game)
 
 static void	anim_setup(t_game *game)
 {
-	game->player.idle_frames = 17;
-	game->block_imgs.block_anim = 9;
+	game->player.idle_frames = 17 * 10;
+	game->enemy.idle_frames = 17 * 10;
+	game->items_imgs.block_frames = 9 * 10;
 }
 
 int	start(t_game *game, char **argv)

@@ -22,7 +22,7 @@ void	move_to_exit(t_game *game)
 	game->collects = -1;
 }
 
-// void	move_to_enemy(t_game *game, t_tile *tile)
-// {
-// 	remove_player(game);
-// }
+void	move_to_enemy(t_game *game, t_tile *tile)
+{
+	remove_player(game);
+}
