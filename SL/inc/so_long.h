@@ -51,6 +51,7 @@ typedef struct s_player
 	int		framecount;
 	int		idle_frames;
 	void	*character_img[3];
+	void	*dead_img[4];
 
 }	t_player;
 

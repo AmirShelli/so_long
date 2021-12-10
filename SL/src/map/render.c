@@ -1,19 +1,21 @@
 #include "../../inc/so_long.h"
+#include <stdio.h>
 
 void	draw_wall(t_tile tile, t_game game, t_coord pos);
 
 static void	draw_image(t_tile tile, t_game game, t_coord pos)
 {
-	if (tile.type == WALL)
+	if (tile.type == WALL) 
 		draw_wall(tile, game, pos);
 	else if (tile.type == EMPTY)
 		mlx_put_image_to_window(game.mlx, game.window,
 				game.wall_imgs.empty, pos.x, pos.y);
-	else if	(tile.type == EMPTIED)
+	else if	(tile.type == EMPTIED) 
 		mlx_put_image_to_window(game.mlx, game.window,
 			game.items_imgs.collects_img[1], pos.x, pos.y);
 	else if (tile.type == EXIT)
 	{
+		
 		if (game.collects != 0)
 			mlx_put_image_to_window(game.mlx, game.window,
 				game.items_imgs.door_img[0], pos.x, pos.y);
@@ -55,10 +57,11 @@ void	render(t_game game)
 	y = 0;
 	while (game.tilemap[y] != NULL)
 	{
-		x = 0;
+		x = 0; 
+		
 		while (game.tilemap[y][x].type != 0)
 		{
-			tile = game.tilemap[y][x];
+			tile = game.tilemap[y][x]; 
 			draw_image(tile, game, tile.coordinates);
 			x++;
 		}

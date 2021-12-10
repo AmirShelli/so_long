@@ -3,7 +3,7 @@
 int	draw_corner(t_tile tile, t_game game, t_coord  pos)
 {
 	if (tile.coordinates.x == 0
-		&& tile.coordinates.y == 0)
+		&& tile.coordinates.y == 0) 
 		mlx_put_image_to_window(game.mlx, game.window,
 			game.wall_imgs.up_left, pos.x, pos.y);
 	else if (tile.coordinates.x == 0
@@ -11,7 +11,7 @@ int	draw_corner(t_tile tile, t_game game, t_coord  pos)
 		mlx_put_image_to_window(game.mlx, game.window,
 			game.wall_imgs.down_left, pos.x, pos.y);
 	else if (tile.coordinates.x == game.wndw_size.x - IMG_SIZE
-		&& tile.coordinates.y == 0)
+		&& tile.coordinates.y == 0) 
 		mlx_put_image_to_window(game.mlx, game.window,
 			game.wall_imgs.up_right, pos.x, pos.y);
 	else if (tile.coordinates.x == game.wndw_size.x - IMG_SIZE
@@ -25,7 +25,7 @@ int	draw_corner(t_tile tile, t_game game, t_coord  pos)
 
 int	draw_sides(t_tile tile, t_game game, t_coord  pos)
 {
-	if (tile.coordinates.x == 0)
+	if (tile.coordinates.x == 0) 
 		mlx_put_image_to_window(game.mlx, game.window,
 			game.wall_imgs.left, pos.x, pos.y);
 	else if (tile.coordinates.x == game.wndw_size.x - IMG_SIZE)

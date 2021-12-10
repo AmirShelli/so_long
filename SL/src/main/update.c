@@ -30,10 +30,10 @@ static void	block_animation(t_items_img *block)
 
 int	update(t_game *game)
 {
-	player_animation(&game->player); 
+	if(game->player.tile)
+		player_animation(&game->player); 
 	player_animation(&game->enemy); 
 	block_animation(&game->items_imgs);
-	// effect_animation(&game->effect);
 	render(*game); 
 	return (1);
 }
