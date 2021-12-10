@@ -22,23 +22,23 @@ void	move_to_exit(t_game *game)
 	game->collects = -1;
 }
 
+// replace dead_img
 void	move_to_enemy(t_game *game, t_tile *tile)
 {
-	(void) tile; remove_player(game);
-// 	game->player.tile = NULL;
-// 	game->player.framecount = 0;
-// 	while(game->player.framecount <= game->player.idle_frames * 3)
-// 	{
-// 		if(game->player.framecount == game->player.idle_frames/2)
-// 			mlx_put_image_to_window(game->mlx, game->window,
-// 				game->player.dead_img[0], tile->coordinates.x, tile->coordinates.y);
-// 		if(game->player.framecount == game->player.idle_frames)
-// 			mlx_put_image_to_window(game->mlx, game->window,
-// 				game->player.dead_img[1], tile->coordinates.x, tile->coordinates.y);
-// 		if(game->player.framecount == game->player.idle_frames * 2)
-// 			mlx_put_image_to_window(game->mlx, game->window,
-// 				game->player.dead_img[2], tile->coordinates.x, tile->coordinates.y);
-// 		game->player.framecount++;
-// 	}
-// 	game->player.current_img = game->player.dead_img[3];
+	game->player.tile = NULL;
+	game->player.framecount = 0;
+	while(game->player.framecount <= game->player.idle_frames * 3)
+	{
+		if(game->player.framecount == game->player.idle_frames/2)
+			mlx_put_image_to_window(game->mlx, game->window,
+				game->player.character_img[0], tile->coordinates.x, tile->coordinates.y);
+		if(game->player.framecount == game->player.idle_frames)
+			mlx_put_image_to_window(game->mlx, game->window,
+				game->player.character_img[1], tile->coordinates.x, tile->coordinates.y);
+		// if(game->player.framecount == game->player.idle_frames * 2)
+		// 	mlx_put_image_to_window(game->mlx, game->window,
+		// 		game->player.character_img[2], tile->coordinates.x, tile->coordinates.y);
+		// game->player.framecount++;
+	}
+	game->player.current_img = game->player.character_img[2];
 }

@@ -43,6 +43,17 @@ static void	open_player_imgs(t_game *game)
 	game->player.current_img = game->player.character_img[0];
 }
 
+// static void	open_dead_imgs(t_game *game)
+// {
+// 	game->player.character_img[0] = mlx_xpm_file_to_image(game->mlx,
+// 			"assets/player/d_img_0.xpm", &game->img_size.x, &game->img_size.y);
+// 	game->player.character_img[1] = mlx_xpm_file_to_image(game->mlx,
+// 			"assets/player/d_img_1.xpm", &game->img_size.x, &game->img_size.y);
+// 	game->player.character_img[2] = mlx_xpm_file_to_image(game->mlx,
+// 			"assets/player/d_img_2.xpm", &game->img_size.x, &game->img_size.y);
+// 	game->player.current_img = game->player.character_img[0];
+// }
+
 static void	open_enemy_imgs(t_game *game)
 {
 	game->enemy.character_img[0] = mlx_xpm_file_to_image(game->mlx,
@@ -101,4 +112,5 @@ void	open_images(t_game *game)
 	open_collect_imgs(game);
 	open_block_imgs(game);
 	open_door_imgs(game);
+	// open_dead_imgs(game);
 }
