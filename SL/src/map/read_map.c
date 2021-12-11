@@ -1,9 +1,8 @@
-#include "../inc/so_long.h"
+#include "../../inc/so_long.h"
 #include <fcntl.h>
 #include <unistd.h>
 #include "../../libft/get_next_line.h"
 
-/* Return how many '\n' are in <file> */
 static int	linecount(char *file)
 {
 	int		linecount;
@@ -26,7 +25,6 @@ static int	linecount(char *file)
 	return (linecount);
 }
 
-/* Allocates memory for a string array with the same lines as the file */
 static char	**alloc_columns(char *file)
 {
 	char	**map;
@@ -41,7 +39,6 @@ static char	**alloc_columns(char *file)
 	return (map);
 }
 
-/* Creates -with malloc- a 2D char map as found in file */
 char	**read_map(char *file)
 {
 	char	**map;

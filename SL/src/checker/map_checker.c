@@ -4,7 +4,6 @@ int	valid_char(char c);
 int	valid_uniquechar(char c, char checker, int *bool);
 int	valid_border(char c, t_coord point, t_coord size);
 
-/* Returns 1 if the file is valid */
 int	valid_file(int argc, char *file)
 {
 	(void) file;
@@ -17,7 +16,6 @@ int	valid_file(int argc, char *file)
 	return (1);
 }
 
-/* Initialize the data needed to check if the map is valid */
 static t_mapcheckerdata	init_checkerdata(char **map)
 {
 	t_mapcheckerdata	data;
@@ -32,8 +30,6 @@ static t_mapcheckerdata	init_checkerdata(char **map)
 	return (data);
 }
 
-/* Checks to do to each indivial tile of the map.
-* When it founds one, pritns an error and returns 0. */
 static int	checks(char **map, t_mapcheckerdata *data)
 {
 	int	x;
@@ -54,8 +50,6 @@ static int	checks(char **map, t_mapcheckerdata *data)
 	return (1);
 }
 
-/* Returns 1 if the map is valid.
-* Printing an error message and returning 0 if not */
 int	valid_map(char **map)
 {
 	t_mapcheckerdata	data;

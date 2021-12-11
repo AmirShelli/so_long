@@ -8,12 +8,14 @@ t_tile	**map_init(char **argv, t_game *game)
 	map = read_map (argv[1]);
 	if (!map)
 		return (NULL);
-	// if (!valid_map(map))
-	// {
-	// 	ft_free_table(map);
-	// 	return (NULL);
-	// }
-	tilemap = generate_tilemap(map, game); puts("free_table not working\n");
+	if (!valid_map(map))
+	{
+		ft_free_table(map);
+		return (NULL);
+	}
+	tilemap = generate_tilemap(map, game);
+	if (!tilemap)
+		return (NULL);
 	ft_free_table(map);
 	return (tilemap);
 }
@@ -32,7 +34,7 @@ void	game_init(t_game *game)
 static void	anim_setup(t_game *game)
 {
 	game->player.idle_frames = 17 * 10;
-	game->enemy.idle_frames = 17 * 10;
+	game->enemy.idle_frames = game->player.idle_frames;
 	game->items_imgs.block_frames = 9 * 10;
 }
 
@@ -42,8 +44,7 @@ int	start(t_game *game, char **argv)
 	game->moves = 0;
 	game->tilemap = map_init(argv, game); 
 	if (game->tilemap == NULL)
-		return (0); 
-	game->og_collects = game->collects;
+		return (0);
 	anim_setup(game);
 	game_init(game);
 	return (1);

@@ -55,11 +55,8 @@ void	setup_tile(t_tile **tilemap, int y, int x)
 	tilemap[y][x].right = &tilemap[y][x + 1];
 }
 
-void	set_gamevars(t_tile *tile, t_game *game, char c)
+void	set_gamevars(t_tile *tile, t_game *game)
 {
-	(void) c;
-	if (tile->type == ENEMY)
-		game->enemy.tile = tile;
 	if (tile->type == PLAYER)
 		game->player.tile = tile;
 	else if (tile->type == COLLECTABLE)
@@ -83,7 +80,7 @@ t_tile	**generate_tilemap(char **map, t_game *game)
 		{
 			tilemap[y][x].type = define_tiletype(map[y][x]);
 			setup_tile(tilemap, y, x);
-			set_gamevars(&tilemap[y][x], game, map[y][x]);
+			set_gamevars(&tilemap[y][x], game);
 			x++;
 		}
 		tilemap[y][x].type = 0;
