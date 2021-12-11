@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
 	t_game game;
 
-	if(argc == 2) //check is_valid_map
+	if(argc == 2) //check is_valid_file
 	{
 		if (!start(&game, argv))
 			return (1);
