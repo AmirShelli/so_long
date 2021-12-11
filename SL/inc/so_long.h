@@ -23,7 +23,6 @@ enum e_keycode
 	KEY_DOWN = 1,
 	KEY_LEFT = 0,
 	KEY_RIGHT = 2,
-	RESET = 15,
 	ESC = 53
 };
 
@@ -44,13 +43,18 @@ typedef struct s_tile
 	struct s_tile	*right;
 }	t_tile;
 
+typedef struct s_animated
+{
+	void	*current_img;
+	int		framecount;
+	int		frames;
+	void	*img[3];
+}			t_animated;
+
 typedef struct s_player
 {
 	t_tile	*tile;
-	void	*current_img;
-	int		framecount;
-	int		idle_frames;
-	void	*character_img[3];
+	t_animated character;
 	void	*dead_img[4];
 
 }	t_player;
@@ -70,10 +74,7 @@ typedef struct s_wall_img
 
 typedef struct s_items_img
 {
-	void	*current_img;
-	int 	framecount;
-	int		block_frames;
-	void	*block_img[3];
+	t_animated block;
 	void	*door_img[2];
 	void	*collects_img[2];
 }	t_items_img;

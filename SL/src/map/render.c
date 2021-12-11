@@ -28,10 +28,10 @@ static void	draw_image(t_tile tile, t_game game, t_coord pos)
 			game.items_imgs.collects_img[0], pos.x, pos.y);
 	else if (tile.type == PLAYER) 
 		mlx_put_image_to_window(game.mlx, game.window,
-			game.player.current_img, pos.x, pos.y);
+			game.player.character.current_img, pos.x, pos.y);
 	else if (tile.type == ENEMY) 
 		mlx_put_image_to_window(game.mlx, game.window,
-			game.enemy.current_img, pos.x, pos.y);
+			game.enemy.character.current_img, pos.x, pos.y);
 }
 
 static void	draw_text(t_game game)

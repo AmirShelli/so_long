@@ -49,5 +49,5 @@ void	draw_wall(t_tile tile, t_game game, t_coord pos)
 	else if (draw_sides(tile, game, pos))
 		return ;
 	mlx_put_image_to_window(game.mlx, game.window,
-		game.items_imgs.current_img, pos.x, pos.y);
+		game.items_imgs.block.current_img, pos.x, pos.y);
 }

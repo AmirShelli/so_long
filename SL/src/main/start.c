@@ -33,9 +33,9 @@ void	game_init(t_game *game)
 
 static void	anim_setup(t_game *game)
 {
-	game->player.idle_frames = 17 * 10;
-	game->enemy.idle_frames = game->player.idle_frames;
-	game->items_imgs.block_frames = 9 * 10;
+	game->player.character.frames = 17 * 10;
+	game->enemy.character.frames = game->player.character.frames;
+	game->items_imgs.block.frames = 9 * 10;
 }
 
 int	start(t_game *game, char **argv)

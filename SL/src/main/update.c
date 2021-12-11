@@ -1,39 +1,25 @@
 #include "../../inc/so_long.h"
 
-static void	player_animation(t_player *player)
+static void	animation(t_animated *object)
 {
-	if (player->framecount == player->idle_frames)
-		player->current_img = player->character_img[0];
-	if (player->framecount == player->idle_frames * 2)
-		player->current_img = player->character_img[1];
-	if (player->framecount >= player->idle_frames * 3)
+	if (object->framecount == object->frames)
+		object->current_img = object->img[0];
+	if (object->framecount == object->frames * 2)
+		object->current_img = object->img[1];
+	if (object->framecount >= object->frames * 3)
 	{
-		player->current_img = player->character_img[2];
-		player->framecount = 0;
+		object->current_img = object->img[2];
+		object->framecount = 0;
 	}
-	player->framecount += 1;
-}
-
-static void	block_animation(t_items_img *block)
-{
-	if (block->framecount == block->block_frames)
-		block->current_img = block->block_img[0];
-	if (block->framecount == block->block_frames * 2)
-		block->current_img = block->block_img[1];
-	if (block->framecount >= block->block_frames * 2)
-	{
-		block->current_img = block->block_img[2];
-		block->framecount = 0;
-	}
-	block->framecount += 1;
+	object->framecount += 1;
 }
 
 int	update(t_game *game)
 {
 	if(game->player.tile)
-		player_animation(&game->player); 
-	player_animation(&game->enemy); 
-	block_animation(&game->items_imgs);
+		animation(&game->player.character); 
+	animation(&game->enemy.character); 
+	animation(&game->items_imgs.block);
 	render(*game); 
 	return (1);
 }

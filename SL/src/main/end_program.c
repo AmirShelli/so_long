@@ -1,11 +1,5 @@
 #include "../../inc/so_long.h"
 
-// void	kill_player(t_game *game, t_coord pos)
-// {
-// 	game->player.tile = NULL;
-// 	effect_anim(&game->effect, pos);
-// }
-
 void	remove_player(t_game *game)
 {
 	game->player.tile->type = EMPTY;
