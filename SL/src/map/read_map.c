@@ -21,6 +21,7 @@ static int	linecount(char *file)
 		if (c == '\n')
 			linecount++;
 	}
+	linecount++;
 	close(fd);
 	return (linecount);
 }
@@ -33,7 +34,7 @@ static char	**alloc_columns(char *file)
 	line_count = linecount(file);
 	if (line_count <= 0)
 		return (null_error("does your file even exist?"));
-	map = malloc(sizeof(char *) * line_count + 1);
+	map = malloc(sizeof(char *) * (line_count + 1));
 	if (map == NULL)
 		return (null_error("oops, malloc error."));
 	return (map);

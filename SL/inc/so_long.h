@@ -55,7 +55,7 @@ typedef struct s_player
 {
 	t_tile	*tile;
 	t_animated character;
-	void	*dead_img[4];
+	void	*dead_img;
 
 }	t_player;
 
