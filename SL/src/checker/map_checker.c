@@ -6,13 +6,15 @@ int	valid_border(char c, t_coord point, t_coord size);
 
 int	valid_file(int argc, char *file)
 {
-	(void) file;
+	int file_length;
+
+	file_length = ft_strlen(file);
 	if (argc == 1)
 		return (error("no args"));
 	if (argc > 2)
 		print_warning("only the first file would be used");
-	// if (!ft_strend_cmp(file, ".ber"))
-	// 	return (error("map should be a .ber file"));
+	if (file_length >= 4 && !ft_strstr(&file[file_length] - 4, ".ber"))
+		return (error("map should be a .ber file"));
 	return (1);
 }
 
@@ -58,18 +60,19 @@ int	valid_map(char **map)
 	data = init_checkerdata(map);
 	valid = 1;
 	while (map[data.point.y])
-	{
+	{	
 		if (ft_strlen(map[data.point.y]) != (size_t)data.size.x)
 			valid = error("map must be rectangular");
 		data.point.x = 0;
 		while (map[data.point.y][data.point.x])
 		{
 			if (checks(map, &data) == 0)
-				valid = 0;
+				return (0);
 			data.point.x++;
 		}
 		data.point.y++;
 	}
+	
 	if (!data.b_player || !data.b_exit || !data.b_collect)
 		valid = error("there must be one 'P' and 'E', and at least one 'C'");
 	return (valid);

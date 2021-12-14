@@ -7,7 +7,7 @@ t_tile	**alloc_tilemap(char **map)
 {
 	t_tile	**tilemap;
 	int		i;
-
+	
 	tilemap = malloc(sizeof(t_tile *) * ft_table_linecount(map) + 1);
 	i = 0;
 	while (map[i] && tilemap)
