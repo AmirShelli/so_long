@@ -24,7 +24,7 @@ void	game_init(t_game *game)
 {
 	game->mlx = mlx_init();
 	game->window = mlx_new_window(game->mlx,
-			game->wndw_size.x + IMG_SIZE / 2,
+			game->wndw_size.x,
 			game->wndw_size.y,
 			"so_long");
 	mlx_hook(game->window, 17, 0, end_program, game); 
@@ -33,9 +33,12 @@ void	game_init(t_game *game)
 
 static void	anim_setup(t_game *game)
 {
-	game->player.character.frames = 17 * 10;
+	game->player.character.frames = 17;
 	game->enemy.character.frames = game->player.character.frames;
-	game->items_imgs.block.frames = 9 * 10;
+	game->items_imgs.block.frames = 9;
+	game->items_imgs.block.framecount = 0;
+	game->player.character.framecount = 0;
+	game->enemy.character.framecount = 0;
 }
 
 int	start(t_game *game, char **argv)

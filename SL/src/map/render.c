@@ -41,7 +41,7 @@ static void	draw_text(t_game game)
 	str = ft_itoa(game.moves);
 	if (game.collects >= 0)
 		mlx_string_put(game.mlx, game.window,
-			game.wndw_size.x - IMG_SIZE / 2.3,
+			game.wndw_size.x - IMG_SIZE,
 			IMG_SIZE - IMG_SIZE / 1.5,
 			-1, str);
 	free(str);

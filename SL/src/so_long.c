@@ -9,7 +9,6 @@ int main(int argc, char *argv[])
 		if (!start(&game, argv))
 			return (1);
 		mlx_hook(game.window, 2, 0, input, (void *)&game);
-		// mlx_key_hook(game.window, input, (void *)&game);
 		mlx_loop_hook(game.mlx, update, (void *) &game);
 		mlx_loop(game.mlx);
 		return (0);
