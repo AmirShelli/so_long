@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slucas-s <slucas-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bharghaz <bharghaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 16:08:32 by slucas-s          #+#    #+#             */
-/*   Updated: 2021/04/23 09:58:55 by slucas-s         ###   ########.fr       */
+/*   Updated: 2021/12/15 16:23:44 by bharghaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		get_next_line(int fd, char **line);
 #  define BUFFER_SIZE 42
 # endif
 
-int		ft_linelen (char *line);
+int		ft_linelen(char *line);
 int		ft_newread(int fd, char **oldread);
 char	*ft_getline(int len, char *read);
 char	*ft_clearline(int len, char *read);

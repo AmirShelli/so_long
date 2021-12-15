@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   movements.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bharghaz <bharghaz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 16:34:36 by bharghaz          #+#    #+#             */
+/*   Updated: 2021/12/15 16:34:40 by bharghaz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/so_long.h"
 
 void	remove_player(t_game *game);
@@ -22,7 +34,6 @@ void	move_to_exit(t_game *game)
 	game->collects = -1;
 }
 
-// replace dead_img
 void	move_to_enemy(t_game *game)
 {
 	game->player.tile = NULL;

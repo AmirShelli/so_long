@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tile_generator.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bharghaz <bharghaz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 16:59:48 by bharghaz          #+#    #+#             */
+/*   Updated: 2021/12/15 16:59:59 by bharghaz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/so_long.h"
 
 char	**read_map(char *file);
@@ -7,7 +19,7 @@ t_tile	**alloc_tilemap(char **map)
 {
 	t_tile	**tilemap;
 	int		i;
-	
+
 	tilemap = malloc(sizeof(t_tile *) * ft_table_linecount(map) + 1);
 	i = 0;
 	while (map[i] && tilemap)
@@ -43,7 +55,7 @@ t_tiletype	define_tiletype(char definer)
 
 void	setup_tile(t_tile **tilemap, int y, int x)
 {
-	tilemap[y][x].og_type = tilemap[y][x].type; 
+	tilemap[y][x].og_type = tilemap[y][x].type;
 	tilemap[y][x].coordinates.x = x * IMG_SIZE;
 	tilemap[y][x].coordinates.y = y * IMG_SIZE;
 	if (y != 0)

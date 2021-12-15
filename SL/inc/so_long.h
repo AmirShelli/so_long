@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bharghaz <bharghaz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 16:30:20 by bharghaz          #+#    #+#             */
+/*   Updated: 2021/12/15 16:30:52 by bharghaz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
-#include "../minilibx/mlx.h"
-#include "../libft/libft.h"
-#include <stdio.h>
+# include "../minilibx/mlx.h"
+# include "../libft/libft.h"
+# include <stdio.h>
 
 # define IMG_SIZE 32
 
@@ -53,9 +65,9 @@ typedef struct s_animated
 
 typedef struct s_player
 {
-	t_tile	*tile;
-	t_animated character;
-	void	*dead_img;
+	t_tile		*tile;
+	t_animated	character;
+	void		*dead_img;
 
 }	t_player;
 
@@ -74,9 +86,9 @@ typedef struct s_wall_img
 
 typedef struct s_items_img
 {
-	t_animated block;
-	void	*door_img[2];
-	void	*collects_img[2];
+	t_animated	block;
+	void		*door_img[2];
+	void		*collects_img[2];
 }	t_items_img;
 
 typedef struct s_game

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   update.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bharghaz <bharghaz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 16:43:06 by bharghaz          #+#    #+#             */
+/*   Updated: 2021/12/15 16:45:45 by bharghaz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/so_long.h"
 
 static void	animation(t_animated *object)
@@ -16,10 +28,10 @@ static void	animation(t_animated *object)
 
 int	update(t_game *game)
 {
-	if(game->player.tile)
-		animation(&game->player.character); 
+	if (game->player.tile)
+		animation(&game->player.character);
 	animation(&game->enemy.character);
 	animation(&game->items_imgs.block);
-	render(*game); 
+	render(*game);
 	return (1);
 }

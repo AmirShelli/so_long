@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   input.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bharghaz <bharghaz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 16:42:42 by bharghaz          #+#    #+#             */
+/*   Updated: 2021/12/15 16:45:54 by bharghaz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/so_long.h"
 #include <stdio.h>
 
@@ -30,7 +42,7 @@ int	move_to(t_game *game, t_tile *tile)
 int	input(int key, t_game *game)
 {
 	int	moved;
-	
+
 	if (key == ESC)
 		end_program(game);
 	if (game->player.tile == NULL)

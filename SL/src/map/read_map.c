@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bharghaz <bharghaz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 16:46:15 by bharghaz          #+#    #+#             */
+/*   Updated: 2021/12/15 16:49:24 by bharghaz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/so_long.h"
 #include <fcntl.h>
 #include <unistd.h>
@@ -14,12 +26,14 @@ static int	linecount(char *file)
 	linecount = 0;
 	if (!fd)
 		return (-1);
-	while ((readcount = read(fd, &c, 1)))
+	readcount = read(fd, &c, 1);
+	while (readcount)
 	{
 		if (readcount < 0)
 			return (-1);
 		if (c == '\n')
 			linecount++;
+		readcount = read(fd, &c, 1);
 	}
 	linecount++;
 	close(fd);

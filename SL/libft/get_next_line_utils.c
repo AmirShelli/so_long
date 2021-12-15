@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slucas-s <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bharghaz <bharghaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 12:21:14 by slucas-s          #+#    #+#             */
-/*   Updated: 2021/04/23 12:21:16 by slucas-s         ###   ########.fr       */
+/*   Updated: 2021/12/15 16:22:54 by bharghaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 /* Returns the index of the \n in <line>
 if there is one. -1 if not founded. */
-int	ft_linelen (char *line)
+int	ft_linelen(char *line)
 {
 	int	i;
 

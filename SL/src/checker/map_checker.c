@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_checker.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bharghaz <bharghaz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/15 16:32:09 by bharghaz          #+#    #+#             */
+/*   Updated: 2021/12/15 16:32:19 by bharghaz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/map.h"
 
 int	valid_char(char c);
@@ -6,7 +18,7 @@ int	valid_border(char c, t_coord point, t_coord size);
 
 int	valid_file(int argc, char *file)
 {
-	int file_length;
+	int	file_length;
 
 	file_length = ft_strlen(file);
 	if (argc == 1)
@@ -72,7 +84,6 @@ int	valid_map(char **map)
 		}
 		data.point.y++;
 	}
-	
 	if (!data.b_player || !data.b_exit || !data.b_collect)
 		valid = error("there must be one 'P' and 'E', and at least one 'C'");
 	return (valid);

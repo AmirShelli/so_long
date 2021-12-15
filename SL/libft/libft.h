@@ -6,7 +6,7 @@
 /*   By: bharghaz <bharghaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 22:29:52 by bharghaz          #+#    #+#             */
-/*   Updated: 2021/10/19 22:29:52 by bharghaz         ###   ########.fr       */
+/*   Updated: 2021/12/15 16:26:33 by bharghaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_list
 }					t_list;
 
 void	ft_free_table(char **table);
-int	ft_table_linecount(char **table);
+int		ft_table_linecount(char **table);
 int		ft_isnbr(char *str);
 int		ft_isint(char *str);
 t_list	*ft_lstnew(void *content);
