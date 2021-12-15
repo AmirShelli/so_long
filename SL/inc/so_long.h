@@ -6,13 +6,13 @@
 /*   By: bharghaz <bharghaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:30:20 by bharghaz          #+#    #+#             */
-/*   Updated: 2021/12/15 16:30:52 by bharghaz         ###   ########.fr       */
+/*   Updated: 2021/12/15 17:02:29 by bharghaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# include "../minilibx/mlx.h"
+# include <mlx.h>
 # include "../libft/libft.h"
 # include <stdio.h>
 

@@ -35,7 +35,6 @@ clean :
 
 fclean : clean
 	@$(MAKE) fclean -sC ./libft
-	@$(MAKE) clean -sC ./minilibx
 	@rm -rf $(NAME)
 	@rm -rf $(BONUS)
 
