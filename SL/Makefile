@@ -10,7 +10,7 @@ BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 INCLUDES = -I ./inc 
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+# CFLAGS = -Wall -Werror -Wextra
 
 LINK_LIBFT = -L./libft -lft
 
@@ -20,13 +20,13 @@ libft:
 	@$(MAKE) all -sC ./libft
 
 $(NAME): $(OBJS)
-	@$(CC) $(OBJS) -lmlx -framework OpenGL -framework AppKit $(LINK_LIBFT) -o $(NAME)
-
+	$(CC) $(OBJS) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz $(LINK_LIBFT) -o $(NAME)
+# -framework OpenGL -framework AppKit
 bonus: $(BONUS_OBJS)
 	@$(CC) $(INCLUDES) $(BONUS_OBJS) $(LINK_LIBFT) -o $(BONUS)
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -Imlx $(INCLUDES) $< -c -o $@
+	$(CC) -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 clean :
 	@rm -rf $(wildcard ./*.o)

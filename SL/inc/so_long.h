@@ -31,11 +31,11 @@ typedef enum e_tiletype
 
 enum e_keycode
 {
-	KEY_UP = 13,
-	KEY_DOWN = 1,
-	KEY_LEFT = 0,
-	KEY_RIGHT = 2,
-	ESC = 53
+	KEY_UP = 119,
+	KEY_DOWN = 115,
+	KEY_LEFT = 97,
+	KEY_RIGHT = 100,
+	ESC = 65307
 };
 
 typedef struct s_coordinates

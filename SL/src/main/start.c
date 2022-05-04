@@ -45,9 +45,9 @@ void	game_init(t_game *game)
 
 static void	anim_setup(t_game *game)
 {
-	game->player.character.frames = 17;
+	game->player.character.frames = 17 * 30;
 	game->enemy.character.frames = game->player.character.frames;
-	game->items_imgs.block.frames = 9;
+	game->items_imgs.block.frames = 9 * 30;
 	game->items_imgs.block.framecount = 0;
 	game->player.character.framecount = 0;
 	game->enemy.character.framecount = 0;

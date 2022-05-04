@@ -42,7 +42,7 @@ int	move_to(t_game *game, t_tile *tile)
 int	input(int key, t_game *game)
 {
 	int	moved;
-
+	
 	if (key == ESC)
 		end_program(game);
 	if (game->player.tile == NULL)
